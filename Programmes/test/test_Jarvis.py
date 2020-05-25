@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import unittest
 from pathlib import Path    # Appel système des paths
 import sys  # Gestion de l'interpreteur
