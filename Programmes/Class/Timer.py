@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import datetime as dt  # Mise en oeuvre rapide du type date-heure
+import datetime as dt  # Mise en oeuvre rapide du type date heure
 
 
 class Timer():
@@ -14,14 +14,14 @@ class Timer():
         """
         Lancement du chronometre
         """
-        self.start_time = dt.datetime.now()  # Capture l'heure de l'ordinateur
+        self.start_time = dt.datetime.now()  # Capture l heure de l ordinateur
 
     def stop(self) -> None:
         """
         Arret du chronometre
         """
         self.chrono = str()
-        stop_time = dt.datetime.now()  # Capture l'heure de l'ordinateur
+        stop_time = dt.datetime.now()  # Capture l heure de l ordinateur
         time_execut = stop_time - self.start_time
         # Difference entre debut et fin
         self.time_s = time_execut.total_seconds()

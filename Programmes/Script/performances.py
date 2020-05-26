@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-from pathlib import Path    # Appel système des paths
-import sys  # Gestion de l'interpréteur
+from pathlib import Path    # Appel systeme des paths
+import sys  # Gestion de l interpreteur
 import openpyxl as xl   # Ecriture dans excel
 # Non natif
 
-# Récupération du chemin du programme
+# Recuperation du chemin du programme
 DIRECTORY = Path(__file__).parents[1]
-# Ajout du chemin dans la liste des imports de l'interpréteur
+# Ajout du chemin dans la liste des imports de l interpreteur
 sys.path.append(str(DIRECTORY))
 
-# Import des Scripts nécessaires
+# Import des scripts necessaires
 import Script.cloud_of_points as clouds
 import Class.Timer as Timer
 import Class.Quickhull as Quickhull
@@ -24,7 +24,7 @@ PATH = r"Data.xlsx"
 
 def test() -> None:
     """
-    Premet le test des méthodes pour calculer les enveloppes convexes
+    Permet le test des methodes pour calculer les enveloppes convexes
     """
     # Declarations des classes
     G = Graham.Graham()

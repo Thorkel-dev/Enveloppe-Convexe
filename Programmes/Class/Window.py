@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-import tkinter as tk    # Gestion de l'interface graphique
-from pathlib import Path    # Appel système des paths
-import sys  # Gestion de l'interpreteur
+import tkinter as tk    # Gestion de l interface graphique
+from pathlib import Path    # Appel systeme des paths
+import sys  # Gestion de l interpreteur
 
 # Recuperation du chemin du programme
 DIRECTORY = Path(__file__).parents[1]
-# Ajout du chemin dans la liste des imports de l'interpreteur
+# Ajout du chemin dans la liste des imports de l interpreteur
 sys.path.append(str(DIRECTORY))
 
-# Import des Scripts et Classes necessaires
+# Import des scripts et classes necessaires
 import Main as main
 import Script.data as data
 import Script.cloud_of_points as clouds
@@ -20,7 +20,7 @@ import Class.JarvisAnimation as JarvisAnim
 import Class.Graham as Graham
 import Class.GrahamAnimation as GrahamAnim
 
-# Recuperation des valeurs par default
+# Recuperation des valeurs par defaut
 INFORMATION = main.INFORMATION
 SYMBOLE = main.SYMBOLE
 WIDTH_FRAME_DEFAULT = main.WIDTH_FRAME_DEFAULT
@@ -41,7 +41,7 @@ COLOR_QUICHKULL = main.COLOR_QUICHKULL
 
 class Window(tk.Tk):
     """
-    Creation de l'interface grahique, classe fille de tkinter
+    Creation de l interface grahique, classe fille de tkinter
 
     Args:
         width (int, optional): Largeur du Canvas. Defaults to 500.
@@ -71,12 +71,12 @@ class Window(tk.Tk):
 
     def win_creat(self) -> None:
         """
-        Creation de l'interface graphique
+        Creation de l interface graphique
         """
         global var_G, var_J, var_Q, var_S, var_radio
         global spinbox_width, spinbox_heigh, spinbox_cloud
         global width_text, heigh_text, point_text
-        # Variable de controle
+        # Variables de controle
         var_G = tk.BooleanVar()
         var_J = tk.BooleanVar()
         var_Q = tk.BooleanVar()
@@ -91,13 +91,13 @@ class Window(tk.Tk):
             self, width=self.can_dim[0], heigh=self.can_dim[1], bg="white")
         self.can.grid(column=2, row=0, rowspan=4)
 
-        # Frame principal
+        # Frame principale
         frm = tk.Frame(self, heigh=self.can_dim[1], width=WIDTH_FRAME_DEFAULT)
         frm.grid_propagate(False)
         frm.grid(column=0, row=2, sticky="n", columnspan=2, rowspan=2)
 
         # LabelFrame secondaire se trouvant dans le Label principal,
-        # affiche les animation
+        # affiche les animations
         label_anim = tk.LabelFrame(
             frm, text="Animation", height=100, width=WIDTH_FRAME_DEFAULT)
         label_anim.grid_propagate(False)
@@ -114,9 +114,9 @@ class Window(tk.Tk):
                  justify="left", wraplength=WIDTH_FRAME_DEFAULT).grid()
 
         # LabelFrame principal se trouvant dans le Label princpal,
-        # affiche Temps des programme
+        # affiche Temps des programmes
         self.label_frame = tk.LabelFrame(
-            frm, text="Temps et nombres d'ittérations",
+            frm, text="Temps et nombre d'itérations",
             width=WIDTH_FRAME_DEFAULT, heigh=120)
         self.label_frame.grid_propagate(False)
         self.label_frame.grid(column=0, row=2, rowspan=3)
@@ -124,12 +124,12 @@ class Window(tk.Tk):
         self.label_frame.columnconfigure(2, minsize=50)
 
         # Label secondaire se trouvant dans le Label principal,
-        # affichant  Nom du fchier
+        # affichant  Nom du fichier
         self.file_label = tk.Label(frm, text="fichier:")
         self.file_label.grid(row=5, column=0, pady=5)
 
         # Label secondaire se trouvant dans le Label principal,
-        # permet de créer un nuage de point
+        # permet de créer un nuage de points
         label_cloud = tk.LabelFrame(
             frm, text="Créer un nuage", width=WIDTH_FRAME_DEFAULT, heigh=75)
         label_cloud.grid_propagate(False)
@@ -166,9 +166,9 @@ class Window(tk.Tk):
                   activebackground="red2").grid(row=8, column=0,
                                                 sticky="sw", pady=5)
 
-        # Creation des Checkbutton se trouvant dans le label_frame principal
+        # Creation des Checkbuttons se trouvant dans le label_frame principal
         self.check_select = tk.Checkbutton(
-            self.label_frame, text="Sectionnener tout",
+            self.label_frame, text="Sélectionner tout",
             command=self.select_all, variable=var_S)
         self.check_select.grid(row=0, column=0, sticky="w")
         self.check_Graham = tk.Checkbutton(
@@ -184,7 +184,7 @@ class Window(tk.Tk):
             command=self.envelope_Quickhull, variable=var_Q)
         self.check_Quickhull.grid(row=3, column=0, sticky="w")
 
-        # Creation des Label se trouvant dans le label_frame principal
+        # Creation des Labels se trouvant dans le label_frame principal
         self.time_Graham = tk.Label(self.label_frame, text="00s")
         self.time_Graham.grid(row=1, column=1, sticky="w")
         self.time_Jarvis = tk.Label(self.label_frame, text="00s")
@@ -199,7 +199,7 @@ class Window(tk.Tk):
         self.iteration_Quickhull = tk.Label(self.label_frame, text="0")
         self.iteration_Quickhull.grid(row=3, column=2, sticky="e")
 
-        # Creation des Radiobutton se trouvant dans label_anim,
+        # Creation des Radiobuttons se trouvant dans label_anim,
         # permet de lancer les animations
         tk.Radiobutton(label_anim, text="Graham",
                        command=self.animation_envelope,
@@ -237,7 +237,7 @@ class Window(tk.Tk):
 
     def dell_point(self, event) -> None:
         """
-        Retire un point du nuage de point
+        Retire un point du nuage de points
 
         Args:
             event (object): variable de controle
@@ -262,7 +262,7 @@ class Window(tk.Tk):
 
     def previous_cloud(self) -> None:
         """
-        Charge le nuage precedant
+        Charge le nuage precedent
         """
         self.num_cloud -= 1
         if self.num_cloud <= 0:
@@ -288,7 +288,7 @@ class Window(tk.Tk):
         self.file_label["text"] = "fichier: " + filename
         self.cloud = liste_data[0]
         self.can_dim = liste_data[1]
-        # Nouvels dimensions du Canvas
+        # Nouvelles dimensions du Canvas
         self.can.config(width=self.can_dim[0], heigh=self.can_dim[1])
         width_text.set(int(self.can_dim[0]))
         heigh_text.set(int(self.can_dim[1]))
@@ -297,7 +297,7 @@ class Window(tk.Tk):
 
     def update_win(self) -> None:
         """
-        Actualise l'affichage du nuage de points
+        Actualise l affichage du nuage de points
         """
         self.can.delete("all")
         for point in self.cloud:
@@ -309,13 +309,13 @@ class Window(tk.Tk):
 
     def select_all(self) -> None:
         """
-        Selectionne toute les Checkbutton
+        Selectionne tous les Checkbuttons
         """
         if var_S.get() is True:  # Si Checkbutton est coche
             self.check_Graham.select()
             self.check_Jarvis.select()
             self.check_Quickhull.select()
-        else:  # Sinon on l'efface
+        else:  # Sinon on l efface
             self.check_Graham.deselect()
             self.check_Jarvis.deselect()
             self.check_Quickhull.deselect()
@@ -323,7 +323,7 @@ class Window(tk.Tk):
 
     def envelope_Graham(self) -> None:
         """
-        Lance le calcul de l'enveloppe convex Avec la methode de Graham
+        Lance le calcul de l enveloppe convexe avec la methode de Graham
         """
         if var_G.get() is True:  # Si Checkbutton est coche
             Chrono.start()  # On lance le chronometre
@@ -331,20 +331,20 @@ class Window(tk.Tk):
             Chrono.stop()  # Arret du chronometre
             self.time_Graham["text"] = Chrono.chrono
             self.iteration_Graham["text"] = G.itteration
-            # On affiche lenveloppe
+            # On affiche l enveloppe
             self.can.create_polygon(
                 G.envelope, outline=COLOR_GRAHAM, fill="", tag=("Envelope", "Graham"))
             for point in G.envelope:
                 self.can.create_oval(point[0] - 5, point[1] - 5, point[0] + 5,
                                      point[1] + 5, fill=COLOR_GRAHAM,
                                      tag=("Envelope", "Graham"))
-        else:  # Sinon on l'efface
+        else:  # Sinon on l efface
             self.can.delete("Graham")
             self.check_select.deselect()
 
     def envelope_Jarvis(self) -> None:
         """
-        Lance le calcul de l'enveloppe convex Avec la methode de Jarvis
+        Lance le calcul de l enveloppe convexe avec la methode de Jarvis
         """
         if var_J.get() is True:  # Si Checkbutton est coche
             Chrono.start()  # On lance le chronometre
@@ -352,20 +352,20 @@ class Window(tk.Tk):
             Chrono.stop()  # Arret du chronometre
             self.time_Jarvis["text"] = Chrono.chrono
             self.iteration_Jarvis["text"] = J.itteration
-            # On affiche lenveloppe
+            # On affiche l enveloppe
             self.can.create_polygon(J.envelope, outline=COLOR_JARVIS, fill="",
                                     tag=("Envelope", "Jarvis"))
             for point in J.envelope:
                 self.can.create_oval(point[0] - 5, point[1] - 5, point[0] + 5,
                                      point[1] + 5, fill=COLOR_JARVIS,
                                      tag=("Envelope", "Jarvis"))
-        else:  # Sinon on l'efface
+        else:  # Sinon on l efface
             self.can.delete("Jarvis")
             self.check_select.deselect()
 
     def envelope_Quickhull(self) -> None:
         """
-        Lance le calcul de l'enveloppe convex Avec la methode de Quickhull
+        Lance le calcul de l enveloppe convexe avec la methode de Quickhull
         """
         if var_Q.get() is True:  # Si Checkbutton est coche
             Chrono.start()  # On lance le chronometre
@@ -373,14 +373,14 @@ class Window(tk.Tk):
             Chrono.stop()  # Arret du chronometre
             self.time_Quickhull["text"] = Chrono.chrono
             self.iteration_Quickhull["text"] = Q.itteration
-            # On affiche lenveloppe
+            # On affiche l enveloppe
             self.can.create_polygon(Q.envelope, outline=COLOR_QUICHKULL,
                                     fill="", tag=("Envelope", "Quickhull"))
             for point in Q.envelope:
                 self.can.create_oval(point[0] - 5, point[1] - 5, point[0] + 5,
                                      point[1] + 5, fill=COLOR_QUICHKULL,
                                      tag=("Envelope", "Quickhull"))
-        else:  # Sinon on l'efface
+        else:  # Sinon on l efface
             self.can.delete("Quickhull")
             self.check_select.deselect()
 
@@ -398,10 +398,10 @@ class Window(tk.Tk):
 
     def cloud_creation(self) -> None:
         """
-        Creation d un nuage celon les criteres voulu
+        Creation d un nuage selon les criteres voulus
         """
         global width_text, heigh_text, point_text
-        # Recuperation des valeur
+        # Recuperation des valeurs
         width = int(spinbox_width.get())
         heigh = int(spinbox_heigh.get())
         point = int(spinbox_cloud.get())
