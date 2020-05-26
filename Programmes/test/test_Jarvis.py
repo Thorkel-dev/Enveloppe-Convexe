@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 import unittest
-from pathlib import Path    # Appel système des paths
-import sys  # Gestion de l'interpreteur
+from pathlib import Path    # Appel systeme des paths
+import sys  # Gestion de l interpreteur
 
 # Recuperation du chemin du programme
 DIRECTORY = Path(__file__).parents[1]
-# Ajout du chemin dans la liste des imports de l'interpreteur
+# Ajout du chemin dans la liste des imports de l interpreteur
 sys.path.append(str(DIRECTORY))
 
 

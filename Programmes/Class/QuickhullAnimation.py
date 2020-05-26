@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 import tkinter as tk
-from pathlib import Path    # Appel système des paths
-import sys  # Gestion de l'interpreteur
+from pathlib import Path    # Appel systeme des paths
+import sys  # Gestion de l interpreteur
 
 # Recuperation du chemin du programme
 DIRECTORY = Path(__file__).parents[1]
-# Ajout du chemin dans la liste des imports de l'interpreteur
+# Ajout du chemin dans la liste des imports de l interpreteur
 sys.path.append(str(DIRECTORY))
 
-# Import des Classes necessaires
+# Import des classes necessaires
 import Class.Quickhull as Quickhull
 import Main as main
 
-# Recuperation des valeurs par default
+# Recuperation des valeurs par defaut
 SYMBOLE = main.SYMBOLE
 WIDTH_CAN_DEFAULT = main.WIDTH_CAN_DEFAULT
 HEIGT_CAN_DEFAULT = main.HEIGT_CAN_DEFAULT
@@ -32,7 +32,7 @@ class QuickhullAnimation(tk.Tk, Quickhull.Quickhull):
         Creation de l interface graphique
 
         Args:
-            cloud (list): Liste des point du nuage de point
+            cloud (list): Liste des points du nuage
             width (int, optional): Largeur du Canvas. Defaults to 500.
             heigh (int, optional): Hauteur du Canvas. Defaults to 500.
         """
@@ -46,15 +46,15 @@ class QuickhullAnimation(tk.Tk, Quickhull.Quickhull):
             self, width=self.can_dim[0], heigh=self.can_dim[1], bg="white")
         self.can.pack(side=tk.RIGHT)
 
-        # Frame principal
+        # Frame principale
         frm = tk.Frame(self, heigh=self.can_dim[1])
         frm.pack(side=tk.RIGHT)
 
-        # Label indiquant les etapes de realises
+        # Label indiquant les etapes realisees
         self.text_label = tk.Label(frm, text="", wraplength=100)
         self.text_label.pack(side=tk.BOTTOM)
 
-        # Bouton pour demarer l animation
+        # Bouton pour demarrer l animation
         self.start_button = tk.Button(
             frm, text='Start', command=self.animation,  width=15)
         self.start_button.pack(side=tk.TOP)
@@ -69,7 +69,7 @@ class QuickhullAnimation(tk.Tk, Quickhull.Quickhull):
 
     def animation(self) -> None:
         """
-        Initialise l animation et permet son demarage
+        Initialise l animation et permet son demarrage
         """
         global counter, distance_max
         global list_point
@@ -99,7 +99,7 @@ class QuickhullAnimation(tk.Tk, Quickhull.Quickhull):
     def find_origin_animation(self) -> None:
         """
         Animation de la recherche du point avec la plus petite ordonnee et
-        abscise
+        abscisse
         """
         self.text_label["text"] = "Recherche des origines"
         coord_absc_min = self.can.coords("abscisse_min")
@@ -119,7 +119,7 @@ class QuickhullAnimation(tk.Tk, Quickhull.Quickhull):
         elif coord_ord_max[0] < self.origin_max[0]:
             self.can.move("ordonnee_max", 1, 0)
             self.can.after(1, self.find_origin_animation)  # On recommence
-        else:  # On affiche un rectagle sur les origines
+        else:  # On affiche un rectangle sur les origines
             self.can.create_rectangle(self.origin_min[0] - 5,
                                       self.origin_min[1] - 5,
                                       self.origin_min[0] + 5,
@@ -150,14 +150,14 @@ class QuickhullAnimation(tk.Tk, Quickhull.Quickhull):
                                   counter: int = int(),
                                   distance_max: int = int()) -> None:
         """
-        Animation de la recherhce des points de l enveloppe convexe
+        Animation de la recherche des points de l enveloppe convexe
 
         Args:
-            list_point (list): Liste des points de l ensemble de point a
+            list_point (list): Liste des points de l ensemble de points a
             analyser
             point_a (list): Premier point du segment
             point_b (list): Deuxieme point du segment
-            point_c (list, optional): Troisieme point que l on recherchce.
+            point_c (list, optional): Troisieme point que l on recherche.
             Defaults to list().
             counter (int, optional): compteur pour parcourir list_point.
             Defaults to int().
@@ -171,7 +171,7 @@ class QuickhullAnimation(tk.Tk, Quickhull.Quickhull):
             self.start_button['state'] = tk.NORMAL
             return
         if counter < len(list_point):
-            # Recherche du point le plus elogner du segement
+            # Recherche du point le plus eloigne du segment
             point = list_point[counter]
             distance = self.distance_point(point_a, point_b, point)
             self.can.delete("point_anim_right", "envelope_anim_anim_right")
@@ -189,7 +189,7 @@ class QuickhullAnimation(tk.Tk, Quickhull.Quickhull):
                            point_a, point_b, point_c, counter, distance_max)
         else:
             list_point.remove(point_c)
-            # On reorganise la liste de point de l enveloppe pour un bon
+            # On reorganise la liste de points de l enveloppe pour un bon
             # affichage
             if self.position_point(point_a, point_b, point_c) is True:
                 # Si a gauche

@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 import tkinter as tk
-from pathlib import Path    # Appel système des paths
-import sys  # Gestion de l'interpreteur
+from pathlib import Path    # Appel systeme des paths
+import sys  # Gestion de l interpreteur
 import math as mt   # Methode mathematique
 
 # Recuperation du chemin du programme
 DIRECTORY = Path(__file__).parents[1]
-# Ajout du chemin dans la liste des imports de l'interpreteur
+# Ajout du chemin dans la liste des imports de l interpreteur
 sys.path.append(str(DIRECTORY))
 
-# Import des Classes necessaires
+# Import des classes necessaires
 import Class.Jarvis as Jarvis
 import Main as main
 
-# Recuperation des valeurs par default
+# Recuperation des valeurs par defaut
 SYMBOLE = main.SYMBOLE
 WIDTH_CAN_DEFAULT = main.WIDTH_CAN_DEFAULT
 HEIGT_CAN_DEFAULT = main.HEIGT_CAN_DEFAULT
@@ -25,7 +25,7 @@ class JarvisAnimation(tk.Tk, Jarvis.Jarvis):
     Fenetre pour afficher l animation de Jarvis
 
     Args:
-        cloud (list): Liste des point du nuage de point
+        cloud (list): Liste des points du nuage
         width (int, optional): Largeur du Canvas. Defaults to 500.
         heigh (int, optional): Hauteur du Canvas. Defaults to 500.
     """
@@ -40,7 +40,7 @@ class JarvisAnimation(tk.Tk, Jarvis.Jarvis):
         Creation de l interface graphique
 
         Args:
-            cloud (list): Liste des point du nuage de point
+            cloud (list): Liste des points du nuage
             width (int, optional): Largeur du Canvas. Defaults to 500.
             heigh (int, optional): Hauteur du Canvas. Defaults to 500.
         """
@@ -54,15 +54,15 @@ class JarvisAnimation(tk.Tk, Jarvis.Jarvis):
             self, width=self.can_dim[0], heigh=self.can_dim[1], bg="white")
         self.can.pack(side=tk.RIGHT)
 
-        # Frame principal
+        # Frame principale
         frm = tk.Frame(self, heigh=self.can_dim[1])
         frm.pack(side=tk.RIGHT)
 
-        # Label indiquant les etapes de realises
+        # Label indiquant les etapes realisees
         self.text_label = tk.Label(frm, text="", wraplength=100)
         self.text_label.pack(side=tk.BOTTOM)
 
-        # Bouton pour demarer l animation
+        # Bouton pour demarrer l animation
         self.start_button = tk.Button(
             frm, text='Start', command=self.animation,  width=15)
         self.start_button.pack(side=tk.TOP)
@@ -77,7 +77,7 @@ class JarvisAnimation(tk.Tk, Jarvis.Jarvis):
 
     def animation(self) -> None:
         """
-        Initialise l animation et permet son demarage
+        Initialise l animation et permet son demarrage
         """
         self.envelope_anim = list()
         self.list_points = self.cloud.copy()
@@ -97,7 +97,7 @@ class JarvisAnimation(tk.Tk, Jarvis.Jarvis):
     def find_origin_animation(self) -> None:
         """
         Animation de la recherche du point avec la plus petite ordonnee et
-        abscise
+        abscisse
         """
         global previous_point_1, previous_point_2
         self.text_label["text"] = "Recherche de l'origine"
@@ -142,8 +142,8 @@ class JarvisAnimation(tk.Tk, Jarvis.Jarvis):
 
     def angle_anim(self) -> None:
         """
-        Animation de la recherche du point le plus à droite du segment
-        precedant
+        Animation de la recherche du point le plus a droite du segment
+        precedent
         """
         global counter, min_angle, previous_point_1, previous_point_2
         global next_point
@@ -154,7 +154,7 @@ class JarvisAnimation(tk.Tk, Jarvis.Jarvis):
             next_delta_y = point[1] - previous_point_1[1]
             next_angle = mt.atan2(next_delta_y, next_delta_x)
             self.can.delete("line_anim", "point_anim", "abscisse", "ordonnee")
-            # le point analyse est affiche en vert
+            # Le point analyse est affiche en vert
             self.can.create_line(point, previous_point_1,
                                  fill="green", tag="line_anim")
             self.can.create_oval(point[0] - 5, point[1] - 5,

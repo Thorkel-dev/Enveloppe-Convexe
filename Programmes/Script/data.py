@@ -1,49 +1,49 @@
 # -*- coding: utf-8 -*-
 import os as os  # Gestion des chemins vers les fichiers
-import json as js   # Ecriture et récupération de liste dans les fichiers
-from pathlib import Path    # Appel système des paths
-import sys  # Gestion de l'interpréteur
+import json as js   # Ecriture et recuperation de liste dans les fichiers
+from pathlib import Path    # Appel systeme des paths
+import sys  # Gestion de l interpreteur
 
-# Récupération du chemin du programme
+# Recuperation du chemin du programme
 DIRECTORY = Path(__file__).parents[1]
-# Ajout du chemin dans la liste des imports de l'interpréteur
+# Ajout du chemin dans la liste des imports de l interpreteur
 sys.path.append(str(DIRECTORY))
 
-# Import des Scripts nécessaires
+# Import des scripts necessaires
 import Script.cloud_of_points as clouds
 
 
 def data(num_cloud: int = int(), path: object = None) -> (list, object, str):
     """
-    Récupération des données dans les fichiers nuages de points
+    Recuperation des donnees dans les fichiers nuages de points
 
     Args:
-        num_cloud (int, optional): Numéro du nuage voulu. Defaults to 0.
+        num_cloud (int, optional): Numero du nuage voulu. Defaults to 0.
         path (pathlib, optional): Chemin vers le fichier nuage.
         Defaults to None.
 
     Returns:
-        list: Ensemble des donnés
+        list: Ensemble des donnees
         pathlib: Chemin du fichier lu
         str: Nom du fichier lu
     """
     list_data = list()
-    # Liste des fichiers dans le répertoire
+    # Liste des fichiers dans le repertoire
     try:
-        # Liste des fichiers dans le répertoire
+        # Liste des fichiers dans le repertoire
         liste_file = os.listdir(str(DIRECTORY) + "/Nuages")
     except FileNotFoundError:
-        # Création du répertoire
+        # Creation du repertoire
         os.mkdir(str(DIRECTORY) + "/Nuages")
         liste_file = os.listdir(str(DIRECTORY) + "/Nuages")
     if path is None:
         try:  # Si le chemin existe
             path = str(DIRECTORY) + "/Nuages/" + liste_file[num_cloud]
-        except IndexError:  # Sinon on le crée
+        except IndexError:  # Sinon on le cree
             path = clouds.writing()
     with open(path, "r") as file:
-        list_data = js.load(file)  # Chargemnt de la liste des point du nuage
-    file_name = os.path.basename(path)  # Récupération du nom du fichier
+        list_data = js.load(file)  # Chargement de la liste des points du nuage
+    file_name = os.path.basename(path)  # Recuperation du nom du fichier
     return list_data, path, file_name
 
 
