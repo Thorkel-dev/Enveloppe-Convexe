@@ -28,6 +28,9 @@ MARGIN_CAN_X_DEFAULT = 10
 MARGIN_CAN_Y_DEFAULT = 10
 MARGIN_POINT_X_DEFAULT = 10
 MARGIN_POINT_Y_DEFAULT = 10
+COLOR_GRAHAM ="red"
+COLOR_JARVIS = "blue"
+COLOR_QUICHKULL = "green"
 
 if __name__ == "__main__":
     # Import des Classes nécessaires

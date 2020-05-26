@@ -34,6 +34,9 @@ POINT_MIN = main.POINT_MIN
 POINT_MAX = main.POINT_MAX
 MARGIN_POINT_X_DEFAULT = main.MARGIN_POINT_X_DEFAULT
 MARGIN_POINT_Y_DEFAULT = main.MARGIN_POINT_Y_DEFAULT
+COLOR_GRAHAM = main.COLOR_GRAHAM
+COLOR_JARVIS = main.COLOR_JARVIS
+COLOR_QUICHKULL = main.COLOR_QUICHKULL
 
 
 class Window(tk.Tk):
@@ -330,10 +333,10 @@ class Window(tk.Tk):
             self.iteration_Graham["text"] = G.itteration
             # On affiche lenveloppe
             self.can.create_polygon(
-                G.envelope, outline="red", fill="", tag=("Envelope", "Graham"))
+                G.envelope, outline=COLOR_GRAHAM, fill="", tag=("Envelope", "Graham"))
             for point in G.envelope:
                 self.can.create_oval(point[0] - 5, point[1] - 5, point[0] + 5,
-                                     point[1] + 5, fill="red",
+                                     point[1] + 5, fill=COLOR_GRAHAM,
                                      tag=("Envelope", "Graham"))
         else:  # Sinon on l'efface
             self.can.delete("Graham")
@@ -350,11 +353,11 @@ class Window(tk.Tk):
             self.time_Jarvis["text"] = Chrono.chrono
             self.iteration_Jarvis["text"] = J.itteration
             # On affiche lenveloppe
-            self.can.create_polygon(J.envelope, outline="blue", fill="",
+            self.can.create_polygon(J.envelope, outline=COLOR_JARVIS, fill="",
                                     tag=("Envelope", "Jarvis"))
             for point in J.envelope:
                 self.can.create_oval(point[0] - 5, point[1] - 5, point[0] + 5,
-                                     point[1] + 5, fill="blue",
+                                     point[1] + 5, fill=COLOR_JARVIS,
                                      tag=("Envelope", "Jarvis"))
         else:  # Sinon on l'efface
             self.can.delete("Jarvis")
@@ -371,11 +374,11 @@ class Window(tk.Tk):
             self.time_Quickhull["text"] = Chrono.chrono
             self.iteration_Quickhull["text"] = Q.itteration
             # On affiche lenveloppe
-            self.can.create_polygon(Q.envelope, outline="green",
+            self.can.create_polygon(Q.envelope, outline=COLOR_QUICHKULL,
                                     fill="", tag=("Envelope", "Quickhull"))
             for point in Q.envelope:
                 self.can.create_oval(point[0] - 5, point[1] - 5, point[0] + 5,
-                                     point[1] + 5, fill="green",
+                                     point[1] + 5, fill=COLOR_QUICHKULL,
                                      tag=("Envelope", "Quickhull"))
         else:  # Sinon on l'efface
             self.can.delete("Quickhull")

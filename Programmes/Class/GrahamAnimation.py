@@ -10,12 +10,13 @@ sys.path.append(str(DIRECTORY))
 # Import des Classes necessaires
 import tkinter as tk
 import Class.Graham as Graham
-import Main as Main
+import Main as main
 
 # Recuperation des valeurs par default
-SYMBOLE = Main.SYMBOLE
-WIDTH_CAN_DEFAULT = Main.WIDTH_CAN_DEFAULT
-HEIGT_CAN_DEFAULT = Main.HEIGT_CAN_DEFAULT
+SYMBOLE = main.SYMBOLE
+WIDTH_CAN_DEFAULT = main.WIDTH_CAN_DEFAULT
+HEIGT_CAN_DEFAULT = main.HEIGT_CAN_DEFAULT
+COLOR_GRAHAM = main.COLOR_GRAHAM
 
 
 class GrahamAnimation(tk.Tk, Graham.Graham):
@@ -105,7 +106,7 @@ class GrahamAnimation(tk.Tk, Graham.Graham):
         else:  # On affiche un rectagle sur l origine
             self.can.create_rectangle(
                 self.origin[0] - 5, self.origin[1] - 5, self.origin[0] + 5,
-                self.origin[1] + 5, fill="red",  tag="point_origin")
+                self.origin[1] + 5, fill=COLOR_GRAHAM,  tag="point_origin")
             self.can.after(1000, self.angle_animation)   # Suite de l animation
 
     def angle_animation(self) -> None:
@@ -163,13 +164,13 @@ class GrahamAnimation(tk.Tk, Graham.Graham):
                 index_oint = self.envelope_anim.index(point)
                 self.can.create_line(self.envelope_anim[index_oint - 1],
                                      self.envelope_anim[index_oint],
-                                     fill="red", tag="line_convex")
+                                     fill=COLOR_GRAHAM, tag="line_convex")
                 self.can.create_oval(point[0] - 5, point[1] - 5, point[0] + 5,
-                                     point[1] + 5, fill="red",
+                                     point[1] + 5, fill=COLOR_GRAHAM,
                                      tag="point_convexe")
         else:
             self.can.create_line(self.envelope_anim[-1], self.origin,
-                                 fill="red", tag="line_convex")
+                                 fill=COLOR_GRAHAM, tag="line_convex")
             self.start_button['state'] = tk.NORMAL
             self.text_label["text"] = "Enveloppe convexe complète"
             self.can.delete("point_num")
