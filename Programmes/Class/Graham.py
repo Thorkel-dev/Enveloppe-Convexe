@@ -13,7 +13,7 @@ class Graham():
 
     def find_origin(self) -> list:
         """
-        Recherche du point avec la plus petite ordonnee et abscise
+        Recherche du point avec la plus petite ordonnee et abscisse
         """
         self.origin = [mt.inf, 0]
         min_y = mt.inf
@@ -34,9 +34,9 @@ class Graham():
             point (list): Point a analyser
 
         Returns:
-            float: angle forme entre le pointet l origine
+            float: angle forme entre le point et l origine
         """
-        # Methode de la tangeante
+        # Methode de la tangente
         delta_x = point[0] - self.origin[0]
         delta_y = point[1] - self.origin[1]
         angle = float()
@@ -65,7 +65,7 @@ class Graham():
 
     def fusion(self, list_a: list, list_b: list) -> list:
         """
-        Permet la fusion de deux listes tries
+        Permet la fusion de deux listes triees
 
         Args:
             list_a (list): premiere liste
@@ -84,10 +84,10 @@ class Graham():
         if len(list_b) == 0:
             return list_a
         while num_point_a < len_list_a and num_point_b < len_list_b:
-            # On parcoure l ensemble des listes
+            # On parcourt l ensemble des listes
             self.itteration += 1
-            # Le trie se fait en fonction de l angle du point et de l origine
-            # dans l odre croissant
+            # Le tri se fait en fonction de l angle du point et de l origine
+            # dans l ordre croissant
             if self.angle(list_a[num_point_a]) < self.angle(
                     list_b[num_point_b]):
                 list_sort.append(list_a[num_point_a])
@@ -125,7 +125,7 @@ class Graham():
         Recherche des points de l enveloppe convexe
 
         Args:
-            cloud (list): Liste des points du nuage de points
+            cloud (list): Liste des points du nuage
         """
         self.envelope = list()
         self.itteration = int()
@@ -133,14 +133,14 @@ class Graham():
         self.find_origin()
         self.point_sort = self.sorting_fusion(self.cloud)
         self.envelope.extend([self.point_sort[0], self.point_sort[1]]
-                             )  # Ajout des points qui sont sur l'enveloppe
+                             )  # Ajout des points qui sont sur l enveloppe
         for point in self.point_sort[2:]:
-            # On teste tout les points
+            # On teste tous les points
             self.itteration += 1
             while (self.vectorial_product(
                     self.envelope[-2], self.envelope[-1], point) is True and
                     len(self.envelope) >= 3):
-                # Le point teste est plus a l'exterieur que le precedant point
+                # Le point test est plus a l exterieur que le precedent point
                 self.envelope.pop()  # On retire le point en trop
                 self.itteration += 1
             self.envelope.append(point)
@@ -149,11 +149,11 @@ class Graham():
 
 if __name__ == "__main__":
     from pathlib import Path    # Appel système des paths
-    import sys  # Gestion de l'interpreteur
+    import sys  # Gestion de l interpreteur
 
-    # Recuperation du chemin du programme
+    # Recuperation du chemin d execution du programme
     DIRECTORY = Path(__file__).parents[1]
-    # Ajout du chemin dans la liste des imports de l'interpreteur
+    # Ajout du chemin dans la liste des imports de l interpreteur
     sys.path.append(str(DIRECTORY))
 
     import Script.data as data

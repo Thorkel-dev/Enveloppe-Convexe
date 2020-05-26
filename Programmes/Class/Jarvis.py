@@ -13,7 +13,7 @@ class Jarvis():
 
     def find_origin(self) -> list:
         """
-        Recherche du point avec la plus petite ordonnee et abscise
+        Recherche du point avec la plus petite ordonnee et abscisse
         """
         self.origin = [mt.inf, 0]
         min_y = mt.inf
@@ -29,7 +29,7 @@ class Jarvis():
 
     def distance(self, point_a: list, point_b: list, point_c: list) -> list:
         """
-        Calcul la distance de deux point par rapport a un troisieme point
+        Calcule la distance de deux points par rapport a un troisieme point
 
         Args:
             point_a (list): Premier point
@@ -84,7 +84,7 @@ class Jarvis():
                     next_point = self.distance(
                         point, previous_point_1, previous_point_2)
                     self.envelope[-1] = next_point
-        # Si le point est aligne en ordonne par rapport a l origine
+        # Si le point est aligne en ordonnee par rapport a l origine
         if next_point[1] == self.origin[1]:
             self.envelope.append(next_point)
             return  # On a fait le tour
@@ -99,7 +99,7 @@ class Jarvis():
         Recherche des points de l enveloppe convexe
 
         Args:
-            cloud (list): Liste des points du nuage de points
+            cloud (list): Liste des points du nuage
         """
         self.envelope = list()
         self.itteration = int()
@@ -112,12 +112,12 @@ class Jarvis():
 
 
 if __name__ == "__main__":
-    from pathlib import Path    # Appel système des paths
-    import sys  # Gestion de l'interpreteur
+    from pathlib import Path    # Appel systeme des paths
+    import sys  # Gestion de l interpreteur
 
     # Recuperation du chemin du programme
     DIRECTORY = Path(__file__).parents[1]
-    # Ajout du chemin dans la liste des imports de l'interpreteur
+    # Ajout du chemin dans la liste des imports de l interpreteur
     sys.path.append(str(DIRECTORY))
 
     import Script.data as data

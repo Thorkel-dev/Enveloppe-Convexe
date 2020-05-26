@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
-from pathlib import Path    # Appel système des paths
-import sys  # Gestion de l'interpreteur
+import tkinter as tk
+from pathlib import Path    # Appel systeme des paths
+import sys  # Gestion de l interpreteur
 
 # Recuperation du chemin du programme
 DIRECTORY = Path(__file__).parents[1]
-# Ajout du chemin dans la liste des imports de l'interpreteur
+# Ajout du chemin dans la liste des imports de l interpreteur
 sys.path.append(str(DIRECTORY))
 
-# Import des Classes necessaires
-import tkinter as tk
+# Import des classes necessaires
 import Class.Graham as Graham
 import Main as main
 
-# Recuperation des valeurs par default
+# Recuperation des valeurs par defaut
 SYMBOLE = main.SYMBOLE
 WIDTH_CAN_DEFAULT = main.WIDTH_CAN_DEFAULT
 HEIGT_CAN_DEFAULT = main.HEIGT_CAN_DEFAULT
@@ -34,7 +34,7 @@ class GrahamAnimation(tk.Tk, Graham.Graham):
         Creation de l interface graphique
 
         Args:
-            cloud (list): Liste des point du nuage de point
+            cloud (list): Liste des points du nuage
             width (int, optional): Largeur du Canvas. Defaults to 500.
             heigh (int, optional): Hauteur du Canvas. Defaults to 500.
         """
@@ -48,15 +48,15 @@ class GrahamAnimation(tk.Tk, Graham.Graham):
             self, width=self.can_dim[0], heigh=self.can_dim[1], bg="white")
         self.can.pack(side=tk.RIGHT)
 
-        # Frame principal
+        # Frame principale
         frm = tk.Frame(self, heigh=self.can_dim[1])
         frm.pack(side=tk.RIGHT)
 
-        # Label indiquant les etapes de realises
+        # Label indiquant les etapes realisees
         self.text_label = tk.Label(frm, text="", wraplength=100)
         self.text_label.pack(side=tk.BOTTOM)
 
-        # Bouton pour demarer l animation
+        # Bouton pour demarrer l animation
         self.start_button = tk.Button(
             frm, text='Start', command=self.animation,  width=15)
         self.start_button.pack(side=tk.TOP)
@@ -71,7 +71,7 @@ class GrahamAnimation(tk.Tk, Graham.Graham):
 
     def animation(self) -> None:
         """
-        Initialise l animation et permet son demarage
+        Initialise l animation et permet son demarrage
         """
         global counter
         counter = int()
@@ -80,7 +80,7 @@ class GrahamAnimation(tk.Tk, Graham.Graham):
         self.find_origin()
         # On s assure qu il n y a rien
         self.can.delete("line_convex", "point_convexe", "point_origin")
-        # Element de base
+        # Elements de base
         self.can.create_line(
             0, 0, self.can_dim[0], 0, tag="abscisse", cap="round")
         self.can.create_line(
@@ -103,7 +103,7 @@ class GrahamAnimation(tk.Tk, Graham.Graham):
         elif coord_ord[0] < self.origin[0]:
             self.can.move("ordonnee", 1, 0)
             self.can.after(1, self.find_origin_animation)  # On recommence
-        else:  # On affiche un rectagle sur l origine
+        else:  # On affiche un rectangle sur l origine
             self.can.create_rectangle(
                 self.origin[0] - 5, self.origin[1] - 5, self.origin[0] + 5,
                 self.origin[1] + 5, fill=COLOR_GRAHAM,  tag="point_origin")
@@ -152,7 +152,7 @@ class GrahamAnimation(tk.Tk, Graham.Graham):
             while (self.vectorial_product(self.envelope_anim[-2],
                    self.envelope_anim[-1], point) is True and
                    len(self.envelope_anim) >= 3):
-                # Le point teste est plus a l'exterieur que le precedant point
+                # Le point teste est plus a l exterieur que le precedent point
                 self.envelope_anim.pop()  # On retire le point en trop
             self.envelope_anim.append(point)
             counter += 1

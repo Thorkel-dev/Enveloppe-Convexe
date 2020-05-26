@@ -13,7 +13,7 @@ class Quickhull():
 
     def find_origin(self) -> (list, list):
         """
-        Recherche du point avec la plus petite ordonnee et abscise et du point
+        Recherche du point avec la plus petite ordonnee et abscisse et du point
         avec la plus grande ordonnee et abscisse
         """
         self.origin_min = [mt.inf, 0]
@@ -39,12 +39,12 @@ class Quickhull():
     def position_point(self, point_a: list, point_b: list, point_c: list) \
             -> bool:
         """
-        Donne la posistion d un point par rapport a un segment
+        Donne la position d un point par rapport a un segment
 
         Args:
             point_a (list): Premier point du segment
             point_b (list): Deuxieme point du segment
-            point_c (list): Point da analyser
+            point_c (list): Point a analyser
 
         Returns:
             bool: True si a gauche, False si a droite
@@ -82,10 +82,10 @@ class Quickhull():
     def point_set(self, list_point: list, point_a: list, point_b: list) \
             -> (list, list):
         """
-        Analyse de la position d un ensemble de point par rapport a un segment
+        Analyse de la position d un ensemble de points par rapport a un segment
 
         Args:
-            list_point (list): Ensemble de point
+            list_point (list): Ensemble de points
             point_a (list): Premier point du segment
             point_b (list): Deuxieme point du segment
 
@@ -97,7 +97,7 @@ class Quickhull():
         list_point_left = list()
         for point in list_point:
             self.itteration += 1
-            # Si le pointest a gauche
+            # Si le point est a gauche
             if self.position_point(point_a, point_b, point) is True:
                 list_point_left.append(point)
             else:  # Si le point est a droite
@@ -109,7 +109,7 @@ class Quickhull():
         Recherche des points de l enveloppe convexe
 
         Args:
-            cloud (list): Liste des points du nuage de points
+            cloud (list): Liste des points du nuage
         """
         self.envelope = list()
         self.itteration = int()
@@ -129,11 +129,11 @@ class Quickhull():
     def find_hull(self, list_point: list, point_a: list, point_b: list) \
             -> None:
         """
-        Recherche le prochain point de l enveloppe a parti d un ensemble de
+        Recherche le prochain point de l enveloppe a partir d un ensemble de
         points et un segment
 
         Args:
-            list_point (list): Ensemble de point
+            list_point (list): Ensemble de points
             point_a (list): Premier point du segment
             point_b (list): Deuxieme point du segment
         """
@@ -141,7 +141,7 @@ class Quickhull():
         distance_max = int()
         if len(list_point) == 0:
             return
-        # Recherche du point le plus eloigne du segement
+        # Recherche du point le plus eloigne du segment
         for point in list_point:
             self.itteration += 1
             distance = self.distance_point(point_a, point_b, point)
@@ -149,7 +149,7 @@ class Quickhull():
                 distance_max = distance
                 point_c = point
         list_point.remove(point_c)
-        # On reorganise la liste de point de l enveloppe pour un bon affichage
+        # On reorganise la liste de points de l enveloppe pour un bon affichage
         if self.position_point(point_a, point_b, point_c) is True:
             # Si a gauche
             self.envelope.append(point_c)  # A la suite
@@ -157,7 +157,7 @@ class Quickhull():
             index_b = self.envelope.index(
                 point_b, 0, len(self.envelope))  # Si a droite
             self.envelope.insert(index_b, point_c)  # Entre le point A et B
-        # Recherche des sous ensemble par rapport au nouveau segment
+        # Recherche des sous ensembles par rapport au nouveau segment
         list_point_left, list_point_right = self.point_set(
             list_point, point_a, point_c)
         self.find_hull(list_point_right, point_a, point_c)
@@ -167,12 +167,12 @@ class Quickhull():
 
 
 if __name__ == "__main__":
-    from pathlib import Path    # Appel système des paths
+    from pathlib import Path    # Appel systeme des paths
     import sys  # Gestion de l'interpreteur
 
     # Recuperation du chemin du programme
     DIRECTORY = Path(__file__).parents[1]
-    # Ajout du chemin dans la liste des imports de l'interpreteur
+    # Ajout du chemin dans la liste des imports de l interpreteur
     sys.path.append(str(DIRECTORY))
 
     import Script.data as data
