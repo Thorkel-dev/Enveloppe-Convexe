@@ -11,12 +11,13 @@ sys.path.append(str(DIRECTORY))
 
 # Import des Classes necessaires
 import Class.Jarvis as Jarvis
-import Main as Main
+import Main as main
 
 # Recuperation des valeurs par default
-SYMBOLE = Main.SYMBOLE
-WIDTH_CAN_DEFAULT = Main.WIDTH_CAN_DEFAULT
-HEIGT_CAN_DEFAULT = Main.HEIGT_CAN_DEFAULT
+SYMBOLE = main.SYMBOLE
+WIDTH_CAN_DEFAULT = main.WIDTH_CAN_DEFAULT
+HEIGT_CAN_DEFAULT = main.HEIGT_CAN_DEFAULT
+COLOR_JARVIS = main.COLOR_JARVIS
 
 
 class JarvisAnimation(tk.Tk, Jarvis.Jarvis):
@@ -112,7 +113,7 @@ class JarvisAnimation(tk.Tk, Jarvis.Jarvis):
         else:  # On affiche un rectangle sur l origine
             self.can.create_rectangle(self.origin[0] - 5, self.origin[1] - 5,
                                       self.origin[0] + 5, self.origin[1] + 5,
-                                      fill="blue",  tag="point_origin")
+                                      fill=COLOR_JARVIS,  tag="point_origin")
             previous_point_1 = self.origin
             previous_point_2 = [self.origin[0] + 1000, self.origin[1]]
             # Suite de l animation
@@ -176,12 +177,12 @@ class JarvisAnimation(tk.Tk, Jarvis.Jarvis):
             self.can.delete("line_anim", "point_anim", "previous_line")
             # Le point de l enveloppe est affiche en bleu
             self.can.create_line(next_point, previous_point_1,
-                                 fill="blue", tag="line_convex")
+                                 fill=COLOR_JARVIS, tag="line_convex")
             self.can.create_line(next_point, self.origin,
-                                 fill="blue", tag="line_convex")
+                                 fill=COLOR_JARVIS, tag="line_convex")
             self.can.create_oval(next_point[0] - 5, next_point[1] - 5,
                                  next_point[0] +
-                                 5, next_point[1] + 5, fill="blue",
+                                 5, next_point[1] + 5, fill=COLOR_JARVIS,
                                  tag="point_convexe")
             self.text_label["text"] = "Enveloppe convexe complète"
             self.start_button['state'] = tk.NORMAL
@@ -192,10 +193,10 @@ class JarvisAnimation(tk.Tk, Jarvis.Jarvis):
             self.can.delete("line_anim", "point_anim", "previous_line")
             # Le point de l enveloppe est affiche en bleu
             self.can.create_line(next_point, previous_point_1,
-                                 fill="blue", tag="line_convex")
+                                 fill=COLOR_JARVIS, tag="line_convex")
             self.can.create_oval(next_point[0] - 5, next_point[1] - 5,
                                  next_point[0] + 5, next_point[1] + 5,
-                                 fill="blue", tag="point_convexe")
+                                 fill=COLOR_JARVIS, tag="point_convexe")
             # Prochain segment
             previous_point_1 = self.envelope_anim[-1]
             previous_point_2 = self.envelope_anim[-2]

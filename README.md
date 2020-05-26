@@ -1,7 +1,7 @@
 # Enveloppe-Convexe
 
 <p align="center">
-<img  src="images\logo.jpg" alt="ESEO Logo" width="600" height="">
+<img  src="images\logo.jpg" alt="ESEO Logo" width="400" height="">
 </p>
 
 ## Introduction
@@ -26,7 +26,7 @@ Pour cela ouvrez dans un terminal le fichier ``Main.py``.
 Une fenêtre graphique s'ouvre :
 
 <p align="center">
-<img  src="images\Annotation 1.png" alt="Annotation 1" width="600" height="">
+<img  src="images\Annotation 1.png" alt="Annotation 1" width="400" height="">
 </p>
 
 Un nuage de point est crée s'il n'en a aucun d'enregistré. Il est possible de les retrouver dans le répertoire ``Programmes\Nuages`` qui est lui aussi créé.
@@ -37,8 +37,8 @@ Il est possible de profiter de toutes les options.
 Pour affichier les enveloppes il vous suffit de cocher les cases des méthodes qui vous intéresse. L'enveloppe apparait immédiatement après son calcul.
 
 <p align="center">
-<img  src="images\Annotation 2.png" alt="Annotation 2" width="600" height="" style="display:inline-block;">
-<img  src="images\Annotation 3.png" alt="Annotation 3" width="600" height="" style="display:inline-block;">
+<img  src="images\Annotation 2.png" alt="Annotation 2" width="400" height="" style="display:inline-block;">
+<img  src="images\Annotation 3.png" alt="Annotation 3" width="400" height="" style="display:inline-block;">
 </p>
 
 On peut voir juste à côté de la case coché, le temps nécessaire au calcul de l'enveloppe ainsi que le nombre d'itérrations.
@@ -51,8 +51,8 @@ Choisiez l'animation de la méthode que vous souhaitez.
 Une nouvelle fenêtre souvre. Et il ne reste plus qu'à la lancer.
 
 <p align="center">
-<img  src="images\Annotation 4.png" alt="Annotation 4" width="600" height="" style="display:inline-block;">
-<img  src="images\Annotation 5.png" alt="Annotation 5" width="600" height="" style="display:inline-block;">
+<img  src="images\Annotation 4.png" alt="Annotation 4" width="400" height="" style="display:inline-block;">
+<img  src="images\Annotation 5.png" alt="Annotation 5" width="400" height="" style="display:inline-block;">
 </p>
 
 ### Créer un nouveau nuage
@@ -62,14 +62,14 @@ En clickant simplement le boutons ``Nuage suivant``, un nuage est créer alèato
 Il est possile d'un créer un celon vos paramètres. Pour cela rentré les dans les zones de textes et cliqué sur le bouton ``Créer``.
 
 <p align="center">
-<img  src="images\Annotation 6.png" alt="Annotation 6" width="600" height="" style="display:inline-block;">
+<img  src="images\Annotation 6.png" alt="Annotation 6" width="400" height="" style="display:inline-block;">
 </p>
 
 La création de nuage est limité. Voir ci-dessous.
 Paramètre | Défault | Maximum | Minimun
 ------------ | ------------- | ------------ | ------------- |
 Hauteur | 500 | 1000 | 100
-Largueur | 500 | 600 | 100
+Largueur | 500 | 400 | 100
 Nombre de point | 25 | Hauteur x Largeur x 500 | 0
 
 Dés la création d'un nouveau nuage, les enveloppes convexes sont recalculer pour les méthodes qui sont sélectionnées.

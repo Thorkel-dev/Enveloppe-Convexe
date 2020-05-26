@@ -10,13 +10,13 @@ sys.path.append(str(DIRECTORY))
 
 # Import des Classes necessaires
 import Class.Quickhull as Quickhull
-import Main as Main
+import Main as main
 
 # Recuperation des valeurs par default
-SYMBOLE = Main.SYMBOLE
-WIDTH_CAN_DEFAULT = Main.WIDTH_CAN_DEFAULT
-HEIGT_CAN_DEFAULT = Main.HEIGT_CAN_DEFAULT
-
+SYMBOLE = main.SYMBOLE
+WIDTH_CAN_DEFAULT = main.WIDTH_CAN_DEFAULT
+HEIGT_CAN_DEFAULT = main.HEIGT_CAN_DEFAULT
+COLOR_QUICHKULL = main.COLOR_QUICHKULL
 
 class QuickhullAnimation(tk.Tk, Quickhull.Quickhull):
     """
@@ -123,15 +123,18 @@ class QuickhullAnimation(tk.Tk, Quickhull.Quickhull):
             self.can.create_rectangle(self.origin_min[0] - 5,
                                       self.origin_min[1] - 5,
                                       self.origin_min[0] + 5,
-                                      self.origin_min[1] + 5, fill="green",
+                                      self.origin_min[1] + 5,
+                                      fill=COLOR_QUICHKULL,
                                       tag="point_origin")
             self.can.create_rectangle(self.origin_max[0] - 5,
                                       self.origin_max[1] - 5,
                                       self.origin_max[0] + 5,
-                                      self.origin_max[1] + 5, fill="green",
+                                      self.origin_max[1] + 5,
+                                      fill=COLOR_QUICHKULL,
                                       tag="point_origin")
             self.can.create_line(self.origin_min, self.origin_max,
-                                 fill="green", tag="envelope_anim_convexe")
+                                 fill=COLOR_QUICHKULL,
+                                 tag="envelope_anim_convexe")
             self.can.delete("abscisse_min", "ordonnee_min",
                             "abscisse_max", "ordonnee_max")
             list_point_left, list_point_right = self.point_set(
@@ -200,10 +203,11 @@ class QuickhullAnimation(tk.Tk, Quickhull.Quickhull):
             self.can.delete("envelope_anim_convexe",
                             "point_anim_right", "envelope_anim_anim_right")
             self.can.create_oval(point_c[0] - 5, point_c[1] - 5,
-                                 point_c[0] + 5, point_c[1] + 5, fill="green",
+                                 point_c[0] + 5, point_c[1] + 5,
+                                 fill=COLOR_QUICHKULL,
                                  tag="point_convexe")
             self.can.create_polygon(self.envelope_anim, fill="",
-                                    outline="green",
+                                    outline=COLOR_QUICHKULL,
                                     tag=("envelope_anim_convexe"))
             # On recommence les recherches
             list_point_left, list_point_right = self.point_set(
