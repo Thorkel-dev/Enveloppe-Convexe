@@ -9,7 +9,7 @@ Projet Math-Info réalisé en 2020, dans le cadre des études en cycle préparat
 Le but du projet est de calculer une enveloppe convexe à partir d’un nuage de point.
 C'est à dire une enveloppe qui regroupe l'ensemble des points d'un nuage de point, et qui est la plus petite possible.
 
-Réalisé avec Anaîs Gallerand, @Torkel, et Antoine Orvain.
+Réalisé avec Anaîs Gallerand, Edouard Gautier, et Antoine Orvain.
 
 ## Objectifs
 Pour cela trois méthodes de calcul sont utilisées :
