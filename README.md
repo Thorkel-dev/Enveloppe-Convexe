@@ -29,7 +29,10 @@ Une fenêtre graphique s'ouvre :
 <img  src="images\Annotation 1.png" alt="Annotation 1" width="400" height="">
 </p>
 
-Un nuage de point est crée s'il n'en a aucun d'enregistré. Il est possible de les retrouver dans le répertoire ``Programmes\Nuages`` qui est lui aussi créé.
+Un nuage de point est crée s'il n'en a aucun d'enregistré. Il est possible de les retrouver dans le répertoire ``Programmes\Nuages`` qui est lui aussi créé. 
+
+*Tout les nuages qui viendront à être créer par la suite seront enregistrés dans ce répertoire.
+Tout les fichiers nuages sont enregistré sous le nom: ``Nuage_*.txt``.*
 
 Il est possible de profiter de toutes les options.
 
@@ -72,7 +75,7 @@ Hauteur | 500 | 1000 | 100
 Largueur | 500 | 400 | 100
 Nombre de point | 25 | Hauteur x Largeur x 500 | 0
 
-Dés la création d'un nouveau nuage, les enveloppes convexes sont recalculer pour les méthodes qui sont sélectionnées.
+**Dès la création d'un nouveau nuage, les enveloppes convexes sont _recalculées_ pour les méthodes qui sont _sélectionnées_.**
 
 ### Ajouter ou retirer un point
 
@@ -80,4 +83,4 @@ Il est possible de retirer un point du nuage. Pour cela un click gauche de la so
 
 Pour retirer un point, faite un click droit dessus.
 
-Dès l'ajout ou la suppression d'un point, l'enveloppe convexe est recalculé pour les méthodes qui sont sélectionnées.
+**Dès l'ajout ou la suppression d'un point, les enveloppes convexes sont _recalculées_ pour les méthodes qui sont _sélectionnées_.**
