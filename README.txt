@@ -11,7 +11,7 @@ que la norme pour les Docstrings Google (http://google.github.io/styleguide/pygu
 
 Le programme ``performances.py`` ne fonctionne que si la bibliothèque openpyxl (https://openpyxl.readthedocs.io/en/stable/) est instalée.
 
-**Réalisé avec Anaîs Gallerand, Edouard Gautier, et Antoine Orvain.**
+Réalisé avec Anaîs Gallerand, Edouard Gautier, et Antoine Orvain.
 
 ## Objectifs
 Pour cela trois méthodes de calcul sont utilisées :
@@ -29,8 +29,8 @@ Une fenêtre graphique s'ouvre.
 
 Un nuage de points est créé s'il n'y en a aucun d'enregistré. Il est possible de les retrouver dans le répertoire ``Programmes\Nuages`` qui est lui aussi créé. 
 
-*Tous les nuages qui viendront à être créés par la suite seront enregistrés dans ce répertoire.
-Tous les fichiers nuages sont enregistrés sous le nom: ``Nuage_*.txt``.*
+Tous les nuages qui viendront à être créés par la suite seront enregistrés dans ce répertoire.
+Tous les fichiers nuages sont enregistrés sous le nom: ``Nuage_*.txt``.
 
 Il est possible de profiter de toutes les options.
 
@@ -39,7 +39,7 @@ Pour afficher les enveloppes, il vous suffit de cocher les cases des méthodes q
 
 On peut voir juste à côté de la case cochée, le temps nécessaire au calcul de l'enveloppe ainsi que le nombre d'itérations.
 
-**Quand _plusieurs_ méthodes sont sélectionnées, les enveloppes se _superposent_ entre elles.**
+Quand plusieurs méthodes sont sélectionnées, les enveloppes se superposent entre elles.
 
 ### Animations
 Afin de comprendre en partie comment fonctionnent les calculs de l'enveloppe, il est possible de regarder l'animation de ces calculs.
@@ -58,7 +58,7 @@ Hauteur          | 500     | 1000                    | 100           |
 Largueur         | 500     | 600                     | 100           |
 Nombre de points | 25      | Hauteur x Largeur x 500 | 0             |
 
-**Dès la création d'un nouveau nuage, les enveloppes convexes sont _recalculées_ pour les méthodes qui sont _sélectionnées_.**
+Dès la création d'un nouveau nuage, les enveloppes convexes sont recalculées pour les méthodes qui sont sélectionnées.
 
 ### Ajouter ou retirer un point
 
@@ -66,4 +66,4 @@ Il est possible de retirer un point du nuage. Pour cela un clique gauche de la s
 
 Pour retirer un point, faite un clique droit dessus.
 
-**Dès l'ajout ou la suppression d'un point, les enveloppes convexes sont _recalculées_ pour les méthodes qui sont _sélectionnées_.**
+Dès l'ajout ou la suppression d'un point, les enveloppes convexes sont recalculées pour les méthodes qui sont sélectionnées.
