@@ -10,7 +10,11 @@ sys.path.append(str(DIRECTORY))
 
 
 class test_Quickhull(unittest.TestCase):
+
     def setUp(self):
+        """
+        On recréer la classe pour eviter toute interaction entre les tests
+        """
         import Class.Quickhull as Quickhull
         self.Q = Quickhull.Quickhull()
         self.Q.cloud = [[447, 468], [42, 455], [424, 159], [441, 215],
@@ -21,21 +25,33 @@ class test_Quickhull(unittest.TestCase):
                         [111, 450], [229, 390], [286, 114], [163, 201]]
 
     def test_fin_origin(self):
+        """
+        Test de la recherche de l origine 
+        """
         self.assertTupleEqual(self.Q.find_origin(),
                               ([80, 27], [118, 485]), "Mauvais origines")
 
     def test_position_point(self):
+        """
+        Test de la position du point par rapport a un segment
+        """
         self.assertTrue(self.Q.position_point([80, 27], [118, 485],
                         [42, 455]), "Le point est à gauche du segment")
         self.assertFalse(self.Q.position_point([118, 485], [80, 27],
                          [42, 455]), "Le point est à droite du segment")
 
     def test_distance_point(self):
+        """
+        Test du calcul de la distance entre un point et un segment
+        """
         self.assertEqual(self.Q.distance_point([118, 485], [80, 27],
                          [42, 455]), 15472927.854242455,
                          "Mauvais calcul de la distance")
 
     def test_point_set(self):
+        """
+        Test du calcul de la position des points par rapport a un segment
+        """
         list_test = [[222, 91], [77, 192], [80, 27], [63, 273],
                      [432, 139], [135, 58], [115, 260], [472, 52]]
         list_right_true = [[222, 91], [432, 139],
@@ -45,6 +61,9 @@ class test_Quickhull(unittest.TestCase):
                               [118, 485]), (list_left_true, list_right_true))
 
     def test_convex_hull(self):
+        """
+        Test global de la recherche de l'enveloppe convexe
+        """
         hull_true = [[42, 455], [80, 27], [455, 41],
                      [472, 52], [447, 468], [118, 485]]
         self.assertListEqual(self.Q.convex_hull(self.Q.cloud), hull_true,
