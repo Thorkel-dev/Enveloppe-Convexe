@@ -77,7 +77,7 @@ La création de nuage est limitée. Voir ci-dessous.
 Paramètre | Default | Maximum | Minimun
 ------------ | ------------- | ------------ | ------------- |
 Hauteur | 500 | 1000 | 100
-Largueur | 500 | 400 | 100
+Largueur | 500 | 600 | 100
 Nombre de points | 25 | Hauteur x Largeur x 500 | 0
 
 **Dès la création d'un nouveau nuage, les enveloppes convexes sont _recalculées_ pour les méthodes qui sont _sélectionnées_.**
