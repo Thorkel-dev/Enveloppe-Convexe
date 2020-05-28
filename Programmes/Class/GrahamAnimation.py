@@ -127,7 +127,7 @@ class GrahamAnimation(tk.Tk, Graham.Graham):
             counter += 1
             self.can.after(100, self.angle_animation)    # On recommence
         else:
-            self.text_label["text"] = "Trie des points en fonction de cet \
+            self.text_label["text"] = "Tri des points en fonction de cet \
                 angle"
             self.point_sort = self.sorting_fusion(self.cloud)
             self.can.delete("Anim_angle")
