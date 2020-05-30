@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import unittest
+import pytest   # Bibiliotheque de test unitaire
 from pathlib import Path    # Appel systeme des paths
 import sys  # Gestion de l interpreteur
 
@@ -9,46 +9,43 @@ DIRECTORY = Path(__file__).parents[1]
 sys.path.append(str(DIRECTORY))
 
 
-class test_Jarvis(unittest.TestCase):
+@pytest.mark.parametrize("cloud", [[[129, 484], [265, 315], [484, 308],
+                                    [308, 361], [425, 308]]])
+@pytest.mark.parametrize("origin", [[425, 308]])
+@pytest.mark.parametrize("envelope", [[[425, 308], [265, 315], [129, 484],
+                                       [484, 308]]])
+class Test_Jarvis():
 
-    def setUp(self):
+    def setup_method(self, method):
         """
         On recréer la classe pour eviter toute interaction entre les tests
         """
         import Class.Jarvis as Jarvis
         self.J = Jarvis.Jarvis()
-        self.J.cloud = [[447, 468], [42, 455], [424, 159], [441, 215],
-                        [455, 41], [312, 187], [222, 276], [197, 85],
-                        [64, 249], [243, 225], [111, 228], [96, 30],
-                        [118, 485], [222, 91], [77, 192], [80, 27], [63, 273],
-                        [432, 139], [135, 58], [115, 260], [472, 52],
-                        [111, 450], [229, 390], [286, 114], [163, 201]]
 
-    def test_origin(self):
+    def test_origin(self, cloud, origin, envelope):
         """
-        Test de la recherche de l origine 
+        Test de la recherche de l origine
         """
-        self.assertListEqual(self.J.find_origin(), [80, 27],
-                             "Mauvaise origine")
+        self.J.cloud = cloud
+        assert self.J.find_origin() == origin
 
-    def test_distance(self):
+    def test_distance(self, cloud, origin, envelope):
         """
         Test du calcul de la distance
         """
-        self.assertEqual(self.J.distance([80, 27], [472, 52], [118, 485]),
-                         [472, 52], "Ne retourne pas le point B")
-        self.assertEqual(self.J.distance([80, 27], [42, 52], [11, 4]),
-                         [80, 27], "Ne retourne pas le point A")
+        assert self.J.distance([80, 27], [472, 52], [118, 485]) == [472, 52]
+        assert self.J.distance([80, 27], [42, 52], [11, 4]) == [80, 27]
 
-    def test_convex_hull(self):
+    def test_convex_hull(self, cloud, origin, envelope):
         """
         Test global de la recherche de l'enveloppe convexe
         """
-        hull_true = [[80, 27], [42, 455], [118, 485],
-                     [447, 468], [472, 52], [455, 41], [80, 27]]
-        self.assertListEqual(self.J.convex_hull(self.J.cloud), hull_true,
-                             "Mauvais calcul de l'enveloppe")
+        self.J.cloud = cloud
+        self.J.origin = origin
+        assert self.J.convex_hull(self.J.cloud) == envelope
 
 
 if __name__ == "__main__":
-    unittest.main()
+    pytest.main(["-v", "Programmes\\test\\Test_Jarvis.py", "--cov",
+                 "--cov-report=html:Programmes\\test\\Jarvis Rapport"])
