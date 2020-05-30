@@ -157,11 +157,7 @@ if __name__ == "__main__":
     sys.path.append(str(DIRECTORY))
 
     import Script.data as data
-
-    data, path, a = data.data()
-    cloud = data[0]
+    
+    cloud, path, a = data.data()
     G = Graham()
-    G.convex_hull(cloud)
-    print(G.envelope, G.origin, G.itteration)
-    print(G.point_sort)
-    print("FIN")
+    G.convex_hull(cloud[0])
