@@ -177,8 +177,6 @@ if __name__ == "__main__":
 
     import Script.data as data
 
-    cloud, path, a = data.data()
+    cloud, path, a = data.data(num_cloud=3)
     Q = Quickhull()
     Q.convex_hull(cloud[0])
-    print(Q.envelope, len(Q.envelope), Q.itteration)
-    print("FIN")

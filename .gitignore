@@ -2,6 +2,6 @@
 **/.vscode/*
 .gitignore
 .coverage
-**/images
-**/.github/*
-**/Nuages/*
+images
+.github
+Programmes/Nuages

@@ -5,16 +5,17 @@ import openpyxl as xl   # Ecriture dans excel
 # Non natif
 
 # Recuperation du chemin du programme
-DIRECTORY = Path(__file__).parents[1]
+DIRECTORY = Path(__file__).parents[2]
 # Ajout du chemin dans la liste des imports de l interpreteur
 sys.path.append(str(DIRECTORY))
 
 # Import des scripts necessaires
-import Script.cloud_of_points as clouds
-import Class.Timer as Timer
-import Class.Quickhull as Quickhull
-import Class.Jarvis as Jarvis
-import Class.Graham as Graham
+import Programmes.Script.cloud_of_points as clouds
+import Programmes.Class.Timer as Timer
+import Programmes.Class.Quickhull as Quickhull
+import Programmes.Class.Jarvis as Jarvis
+import Programmes.Class.Graham as Graham
+
 
 NUM_CLOUD = 10000
 LIST_NUM = [10, 50, 100, 500, 1000, 5000]  # Taille des nuages
