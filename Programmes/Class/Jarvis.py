@@ -125,5 +125,7 @@ if __name__ == "__main__":
     cloud, path, a = data.data()
     J = Jarvis()
     J.convex_hull(cloud[0])
-    print(J.envelope, len(J.envelope), J.itteration)
+    print(cloud[0])
+    print(J.envelope)
+    print(J.origin, J.itteration)
     print("FIN")
