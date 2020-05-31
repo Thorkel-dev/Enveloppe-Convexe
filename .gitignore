@@ -1,7 +1,6 @@
 **/__pycache__/*
 **/.vscode/*
-.gitignore
 .coverage
-images
+**/images/*
 .github
-Programmes/Nuages
+**/Nuages/*
