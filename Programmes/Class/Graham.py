@@ -157,7 +157,7 @@ if __name__ == "__main__":
     sys.path.append(str(DIRECTORY))
 
     import Script.data as data
-    
+
     cloud, path, a = data.data()
     G = Graham()
     G.convex_hull(cloud[0])
