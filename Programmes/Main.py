@@ -9,9 +9,9 @@ sys.path.append(str(DIRECTORY))
 
 # Donnees par defaut
 INFORMATION = "Réalisé par:\
-                \nAnaïs Gallerand,\
-                \nEdouard Gautier,\
-                \nAntoine Orvain\
+                \nAnonyme 1,\
+                \nTorkel,\
+                \nAnonyme 2\
                 \nProjet Maths-Info,    \tAnnée 2020"
 SYMBOLE = "X"
 WIDTH_FRAME_DEFAULT = 250
