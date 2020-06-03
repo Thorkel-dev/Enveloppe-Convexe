@@ -10,8 +10,6 @@
 @copyright = "Copyright 2020, ESEO"
 @credits = ["Edouard Gautier", "Anais Gallerand", "Antoine Orvain"]
 @version = "1.5"
-@email = "edouard_gautier@reseau.eseo.fr, anais.gallerand@reseau.eseo.fr, \
-    antoine.orvain@reseau.eseo.fr"
 @status = "Production"
 @date = "26 mai 2020"
 """
