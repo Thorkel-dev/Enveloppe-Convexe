@@ -15,7 +15,6 @@ que la norme pour les Docstrings [_Google_](http://google.github.io/styleguide/p
 
 Le programme ``performances.py`` ne fonctionne que si la bibliothèque [_openpyxl_](https://openpyxl.readthedocs.io/en/stable/) est instalée.
 
-**Réalisé avec Anaîs Gallerand, Edouard Gautier, et Antoine Orvain.**
 
 ## Objectifs
 Pour cela trois méthodes de calcul sont utilisées :
