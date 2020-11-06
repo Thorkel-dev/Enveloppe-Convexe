@@ -58,8 +58,3 @@ class Test_Jarvis():
         self.J.cloud = cloud
         self.J.origin = origin
         assert self.J.convex_hull(self.J.cloud) == envelope
-
-
-if __name__ == "__main__":
-    pytest.main(["-r chars", "Programmes\\test\\Test_Jarvis.py", "--cov",
-                 "--cov-report=html:Programmes\\test\\Jarvis Rapport"])
