@@ -91,8 +91,3 @@ class Test_Quickhull():
         """
         self.Q.cloud = cloud
         assert self.Q.convex_hull(self.Q.cloud) == envelope
-
-
-if __name__ == "__main__":
-    pytest.main(["-r chars", "Programmes\\test\\Test_Quickhull.py", "--cov",
-                 "--cov-report=html:Programmes\\test\\Quickhull Rapport"])

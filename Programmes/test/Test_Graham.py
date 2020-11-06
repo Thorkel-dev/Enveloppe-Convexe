@@ -83,8 +83,3 @@ class Test_Graham():
         Test global de la recherche de l'enveloppe convexe
         """
         assert self.G.convex_hull(cloud) == envelope
-
-
-if __name__ == "__main__":
-    pytest.main(["-r chars", "Programmes\\test\\Test_Graham.py", "--cov",
-                 "--cov-report=html:Programmes\\test\\Graham Rapport"])
