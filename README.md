@@ -1,5 +1,8 @@
 # Enveloppe-Convexe
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2d43d85ffa4f4fd4855bf8129e8a4a48)](https://app.codacy.com/gh/EdouardGautier/Enveloppe-Convexe?utm_source=github.com&utm_medium=referral&utm_content=EdouardGautier/Enveloppe-Convexe&utm_campaign=Badge_Grade_Settings)
+
+
 <p align="center">
 <img  src="images\logo.jpg" alt="ESEO Logo" width="400" height="">
 </p>
