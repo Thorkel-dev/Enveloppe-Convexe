@@ -1,4 +1,4 @@
-# Enveloppe-Convexe
+# Envelope-Convex
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d97a33e38cee4df8ba83c959b00b048d)](https://www.codacy.com/gh/EdouardGautier/Enveloppe-Convexe/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EdouardGautier/Enveloppe-Convexe&amp;utm_campaign=Badge_Grade)[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/d97a33e38cee4df8ba83c959b00b048d)](https://www.codacy.com/gh/EdouardGautier/Enveloppe-Convexe/dashboard?utm_source=github.com&utm_medium=referral&utm_content=EdouardGautier/Enveloppe-Convexe&utm_campaign=Badge_Coverage)
 
@@ -6,87 +6,89 @@
 <img  src="images\logo.jpg" alt="ESEO Logo" width="400" height="">
 </p>
 
-## Introduction
-Projet Math-Info réalisé en 2020, dans le cadre des études en cycle préparatoire ingénieur.
-Le but du projet est de calculer une enveloppe convexe à partir d’un nuage de points.
-C'est à dire une enveloppe qui regroupe l'ensemble des points d'un nuage de points, et qui est la plus petite possible.
+## Introduction ✏️
+Math-Info project carried out in 2020, as part of studies in the engineering preparatory cycle.
+The aim of the project is to calculate a convex envelope from a point cloud.
+That is to say, an envelope which groups together all the points of a cloud of points, and which is as small as possible.
 
-L'ensemble des scripts est rédigé en UTF-8, la docstring et les commentaires
-respectent la norme [_PEP 484_](https://www.python.org/dev/peps/pep-0484/) ainsi
-que la norme pour les Docstrings [_Google_](http://google.github.io/styleguide/pyguide.html).
+All scripts are written in UTF-8, the docstring and comments are in UTF-8
+comply with the standard [_PEP 484_](https://www.python.org/dev/peps/pep-0484/) as follows
+than the standard for Docstrings [_Google_](http://google.github.io/styleguide/pyguide.html).
 
-Le programme ``performances.py`` ne fonctionne que si la bibliothèque [_openpyxl_](https://openpyxl.readthedocs.io/en/stable/) est instalée.
+The ``performances.py`` program only works if the [_openpyxl_](https://openpyxl.readthedocs.io/en/stable/) library is installed.
 
 
-## Objectifs
-Pour cela trois méthodes de calcul sont utilisées :
+## Objectives ✔️
+Three calculation methods are used for this purpose:
 - Graham
 - Jarvis
 - Quickhull
 
-Ces méthodes doivent pouvoir trouver l'enveloppe convexe pour n'importe quel nuage de points.
-Les nuages de points doivent être créés de manière aléatoire.
+These methods must be able to find the convex envelope for any point cloud.
+Point clouds should be created randomly.
 
-## Lancer le programme
+## Start the program 🏁
 
-Pour cela ouvrez dans un terminal le fichier ``Main.py``.
-Une fenêtre graphique s'ouvre :
+To do this, open the ``Main.py`` file in a terminal.
+A graphical window opens :
 
 <p align="center">
 <img  src="images\Annotation 1.png" alt="Annotation 1" width="400" height="">
 </p>
 
-Un nuage de points est créé s'il n'y en a aucun d'enregistré. Il est possible de les retrouver dans le répertoire ``Programmes\Nuages`` qui est lui aussi créé. 
+A point cloud is created if there is no point cloud registered. They can be found in the "Programs" folder, which is also created. 
 
-*Tous les nuages qui viendront à être créés par la suite seront enregistrés dans ce répertoire.
-Tous les fichiers nuages sont enregistrés sous le nom: ``Nuage_*.txt``.*
+*Any clouds that are created later will be saved in this directory.
+All cloud files are saved under the name: ``Nuage_*.txt``.*
 
-Il est possible de profiter de toutes les options.
+It is possible to take advantage of all the options.
 
-### Tracé de l'enveloppe
-Pour afficher les enveloppes, il vous suffit de cocher les cases des méthodes qui vous intéressent. L'enveloppe apparait immédiatement après son calcul.
+### Envelope trace
+To view the envelopes, simply check the boxes for the methods you are interested in. The envelope appears immediately after it has been calculated.
 
 <p align="center">
 <img  src="images\Annotation 2.png" alt="Annotation 2" width="400" height="" style="display:inline-block;">
 <img  src="images\Annotation 3.png" alt="Annotation 3" width="400" height="" style="display:inline-block;">
 </p>
 
-On peut voir juste à côté de la case cochée, le temps nécessaire au calcul de l'enveloppe ainsi que le nombre d'itérations.
+You can see right next to the ticked box, the time needed to calculate the envelope and the number of iterations.
 
-**Quand _plusieurs_ méthodes sont sélectionnées, les enveloppes se _superposent_ entre elles.**
+**When _several_ methods are selected, the envelopes _superimpose_ on each other.**
 
 ### Animations
-Afin de comprendre en partie comment fonctionnent les calculs de l'enveloppe, il est possible de regarder l'animation de ces calculs.
-Choisissez l'animation de la méthode que vous souhaitez.
-Une nouvelle fenêtre s'ouvre. Et il ne reste plus qu'à la lancer.
+In order to understand in part how the envelope calculations work, it is possible to watch the animation of these calculations.
+Choose the animation of the method you want.
+A new window will open. All that remains is to launch it.
 
 <p align="center">
 <img  src="images\Annotation 4.png" alt="Annotation 4" width="400" height="" style="display:inline-block;">
 <img  src="images\Annotation 5.png" alt="Annotation 5" width="400" height="" style="display:inline-block;">
 </p>
 
-### Créer un nouveau nuage
-Vous avez la possibilité de créer de nouveaux nuages à tout moment.
-En cliquant simplement sur le bouton ``Nuage suivant``, un nuage est créé aléatoirement avec les paramètres par défaut.
-Il est possible d'un créer un selon vos paramètres. Pour cela rentrez les dans les zones de texte et cliquez sur le bouton ``Créer``.
+### Create a new cloud
+You can create new clouds at any time.
+By simply clicking on the ``Nuage suivant``, a cloud is created randomly with the default settings.
+It is possible to create one according to your settings. To do so, enter them in the text boxes and click on the ``Créer`` button.
 
 <p align="center">
 <img  src="images\Annotation 6.png" alt="Annotation 6" width="400" height="" style="display:inline-block;">
 </p>
 
-La création de nuage est limitée. Voir ci-dessous.
-Paramètre | Default | Maximum | Minimun
+Cloud creation is limited. See below.
+Parameter | Default | Maximum | Minimun
 ------------ | ------------- | ------------ | ------------- |
-Hauteur | 500 | 1000 | 100
-Largueur | 500 | 600 | 100
-Nombre de points | 25 | Hauteur x Largeur x 500 | 0
+Height | 500 | 1000 | 100
+Width | 500 | 600 | 100
+Number of stitches | 25 | Height x Width x 500 | 0
 
-**Dès la création d'un nouveau nuage, les enveloppes convexes sont _recalculées_ pour les méthodes qui sont _sélectionnées_.**
+**As soon as a new cloud is created, the convex envelopes are _recalculated_ for the methods that are _selected_.**
 
-### Ajouter ou retirer un point
+### Add or remove a point
+It is possible to remove a point from the cloud. To do this, a left click of the mouse at the desired place in the canvas will bring up a new point.
 
-Il est possible de retirer un point du nuage. Pour cela un clique gauche de la souris, à l'endroit voulu dans le canvas, fait apparaitre un nouveau point.
+To remove a point, right click on it.
 
-Pour retirer un point, faite un clique droit dessus.
+**As soon as a point is added or removed, the convex envelopes are _recalculated_ for the methods that are _selected_.**
 
-**Dès l'ajout ou la suppression d'un point, les enveloppes convexes sont _recalculées_ pour les méthodes qui sont _sélectionnées_.**
+### Limits ⚠️
+The code is in French 🇫🇷.
