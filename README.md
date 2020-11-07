@@ -1,6 +1,5 @@
 # Envelope-Convex
-
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d97a33e38cee4df8ba83c959b00b048d)](https://www.codacy.com/gh/EdouardGautier/Enveloppe-Convexe/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EdouardGautier/Enveloppe-Convexe&amp;utm_campaign=Badge_Grade)[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/d97a33e38cee4df8ba83c959b00b048d)](https://www.codacy.com/gh/EdouardGautier/Enveloppe-Convexe/dashboard?utm_source=github.com&utm_medium=referral&utm_content=EdouardGautier/Enveloppe-Convexe&utm_campaign=Badge_Coverage)
+<img src="https://img.shields.io/static/v1?style=flat&message=Python&logo=python&labelColor=FFD43B&color=FFD43B&logoColor=306998&label=%20"/> [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d97a33e38cee4df8ba83c959b00b048d)](https://www.codacy.com/gh/EdouardGautier/Enveloppe-Convexe/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EdouardGautier/Enveloppe-Convexe&amp;utm_campaign=Badge_Grade)[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/d97a33e38cee4df8ba83c959b00b048d)](https://www.codacy.com/gh/EdouardGautier/Enveloppe-Convexe/dashboard?utm_source=github.com&utm_medium=referral&utm_content=EdouardGautier/Enveloppe-Convexe&utm_campaign=Badge_Coverage) <img src="https://img.shields.io/github/v/tag/Edouardgautier/Enveloppe-Convexe"/> <img src="https://img.shields.io/github/last-commit/Edouardgautier/Enveloppe-Convexe"/>
 
 <p align="center">
 <img  src="images\logo.jpg" alt="ESEO Logo" width="400" height="">
