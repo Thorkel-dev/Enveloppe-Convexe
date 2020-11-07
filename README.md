@@ -4,6 +4,9 @@
 <p align="center">
 <img  src="images\logo.jpg" alt="ESEO Logo" width="400" height="">
 </p>
+<p align=center>
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=EdouardGautier&repo=Enveloppe-Convexe&theme=default_repocard&show_icons=true"/>
+</p>
 
 ## Introduction ✏️
 Math-Info project carried out in 2020, as part of studies in the engineering preparatory cycle.
