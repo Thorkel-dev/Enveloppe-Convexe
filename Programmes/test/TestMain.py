@@ -9,7 +9,6 @@ DIRECTORY = Path(__file__).parents[1]
 sys.path.append(str(DIRECTORY))
 
 
-
 @pytest.mark.parametrize(
     "cloud, origin, list_sort, envelope, angle",
     [([[129, 484], [265, 315], [484, 308], [308, 361], [425, 308]],  # cloud
@@ -42,7 +41,7 @@ sys.path.append(str(DIRECTORY))
       [[299, 54], [428, 95], [465, 160], [488, 278], [447, 471], [52, 467],
        [11, 109]],
       2.4400311322607595)])
-class Test_Graham():
+class TestGraham():
     """
     Test de l ensemble des fonctions de la classe Graham
     """
@@ -65,7 +64,6 @@ class Test_Graham():
         """
         Test de a methode de tri fusion
         """
-        list_sort = list_sort
         self.G.cloud = cloud
         self.G.origin = origin
         list_tets = self.G.sorting_fusion(self.G.cloud)
@@ -84,6 +82,7 @@ class Test_Graham():
         Test global de la recherche de l'enveloppe convexe
         """
         assert self.G.convex_hull(cloud) == envelope
+
 
 @pytest.mark.parametrize(
     "cloud, origin, envelope",
@@ -104,7 +103,7 @@ class Test_Graham():
       [299, 54],
       [[299, 54], [11, 109], [52, 467], [447, 471], [488, 278], [465, 160],
        [428, 95], [299, 54]])])
-class Test_Jarvis():
+class TestJarvis():
 
     def setup_method(self, method):
         """
@@ -134,6 +133,7 @@ class Test_Jarvis():
         self.J.cloud = cloud
         self.J.origin = origin
         assert self.J.convex_hull(self.J.cloud) == envelope
+
 
 @pytest.mark.parametrize(
     "cloud, origin_min, origin_max, envelope, list_left, list_right",
@@ -169,7 +169,7 @@ class Test_Jarvis():
        [299, 54], [314, 292], [75, 311], [11, 109], [253, 412], [235, 203],
        [271, 296], [164, 140], [309, 244], [218, 409]],
       [[488, 278], [465, 160], [428, 95]])])
-class Test_Quickhull():
+class TestQuickhull():
 
     def setup_method(self, method):
         """
@@ -220,5 +220,5 @@ class Test_Quickhull():
 
 
 if __name__ == "__main__":
-    pytest.main(["-r chars", "Programmes\\test\\Test_Main.py", "--cov",
+    pytest.main(["-r chars", "Programmes\\test\\TestMain.py", "--cov",
                  "--cov-report=html:Programmes\\test\\Main Rapport"])
