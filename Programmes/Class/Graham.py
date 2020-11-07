@@ -39,7 +39,6 @@ class Graham():
         # Methode de la tangente
         delta_x = point[0] - self.origin[0]
         delta_y = point[1] - self.origin[1]
-        angle = float()
         angle = mt.atan2(delta_y, delta_x)
         self.itteration += 1
         return angle

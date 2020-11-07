@@ -18,6 +18,7 @@ WIDTH_CAN_DEFAULT = main.WIDTH_CAN_DEFAULT
 HEIGT_CAN_DEFAULT = main.HEIGT_CAN_DEFAULT
 COLOR_QUICHKULL = main.COLOR_QUICHKULL
 
+
 class QuickhullAnimation(tk.Tk, Quickhull.Quickhull):
     """
     Fenetre pour afficher l animation de Quickhull

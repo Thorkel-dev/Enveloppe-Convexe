@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import math as mt
+from typing import Tuple
 
 
 class Quickhull():
@@ -11,7 +12,7 @@ class Quickhull():
         self.envelope = list()
         self.itteration = int()
 
-    def find_origin(self) -> (list, list):
+    def find_origin(self) -> Tuple[list, list]:
         """
         Recherche du point avec la plus petite ordonnee et abscisse et du point
         avec la plus grande ordonnee et abscisse
@@ -80,7 +81,7 @@ class Quickhull():
         return distance
 
     def point_set(self, list_point: list, point_a: list, point_b: list) \
-            -> (list, list):
+            -> Tuple[list, list]:
         """
         Analyse de la position d un ensemble de points par rapport a un segment
 

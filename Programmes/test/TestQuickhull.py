@@ -43,7 +43,7 @@ sys.path.append(str(DIRECTORY))
        [299, 54], [314, 292], [75, 311], [11, 109], [253, 412], [235, 203],
        [271, 296], [164, 140], [309, 244], [218, 409]],
       [[488, 278], [465, 160], [428, 95]])])
-class Test_Quickhull():
+class TestQuickhull():
 
     def setup_method(self, method):
         """
@@ -94,5 +94,5 @@ class Test_Quickhull():
 
 
 if __name__ == "__main__":
-    pytest.main(["-r chars", "Programmes\\test\\Test_Quickhull.py", "--cov",
+    pytest.main(["-r chars", "Programmes\\test\\TestQuickhull.py", "--cov",
                  "--cov-report=html:Programmes\\test\\Quickhull Rapport"])
