@@ -40,9 +40,11 @@ class Jarvis():
             list: Le point le plus eloigne
         """
         self.itteration += 1
-        distA = (point_a[0] - point_c[0]) ** 2 + (point_a[1] - point_c[1]) ** 2
-        distB = (point_b[0] - point_c[0]) ** 2 + (point_b[1] - point_c[1]) ** 2
-        if distA > distB:
+        dist_a = (point_a[0] - point_c[0]) ** 2 + (point_a[1] - point_c[1]) \
+            ** 2
+        dist_b = (point_b[0] - point_c[0]) ** 2 + (point_b[1] - point_c[1]) \
+            ** 2
+        if dist_a > dist_b:
             return point_a
         else:
             return point_b
@@ -87,7 +89,7 @@ class Jarvis():
         # Si le point est aligne en ordonnee par rapport a l origine
         if next_point[1] == self.origin[1]:
             self.envelope.append(next_point)
-            return  # On a fait le tour
+            return None  # On a fait le tour
         else:
             self.list_points.remove(next_point)
             self.envelope.append(next_point)

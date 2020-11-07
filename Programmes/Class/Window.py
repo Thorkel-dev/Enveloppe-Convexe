@@ -333,7 +333,8 @@ class Window(tk.Tk):
             self.iteration_Graham["text"] = G.itteration
             # On affiche l enveloppe
             self.can.create_polygon(
-                G.envelope, outline=COLOR_GRAHAM, fill="", tag=("Envelope", "Graham"))
+                G.envelope, \
+                    outline=COLOR_GRAHAM, fill="", tag=("Envelope", "Graham"))
             for point in G.envelope:
                 self.can.create_oval(point[0] - 5, point[1] - 5, point[0] + 5,
                                      point[1] + 5, fill=COLOR_GRAHAM,

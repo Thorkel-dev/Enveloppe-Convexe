@@ -186,7 +186,7 @@ class JarvisAnimation(tk.Tk, Jarvis.Jarvis):
                                  tag="point_convexe")
             self.text_label["text"] = "Enveloppe convexe complète"
             self.start_button['state'] = tk.NORMAL
-            return  # On a fait le tour
+            return None  # On a fait le tour
         else:
             self.list_points.remove(next_point)
             self.envelope_anim.append(next_point)

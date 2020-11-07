@@ -28,7 +28,7 @@ sys.path.append(str(DIRECTORY))
       [299, 54],
       [[299, 54], [11, 109], [52, 467], [447, 471], [488, 278], [465, 160],
        [428, 95], [299, 54]])])
-class Test_Jarvis():
+class TestJarvis():
 
     def setup_method(self, method):
         """
@@ -61,5 +61,5 @@ class Test_Jarvis():
 
 
 if __name__ == "__main__":
-    pytest.main(["-r chars", "Programmes\\test\\Test_Jarvis.py", "--cov",
+    pytest.main(["-r chars", "Programmes\\test\\TestJarvis.py", "--cov",
                  "--cov-report=html:Programmes\\test\\Jarvis Rapport"])

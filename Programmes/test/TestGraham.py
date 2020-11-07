@@ -41,7 +41,7 @@ sys.path.append(str(DIRECTORY))
       [[299, 54], [428, 95], [465, 160], [488, 278], [447, 471], [52, 467],
        [11, 109]],
       2.4400311322607595)])
-class Test_Graham():
+class TestGraham():
     """
     Test de l ensemble des fonctions de la classe Graham
     """
@@ -64,7 +64,6 @@ class Test_Graham():
         """
         Test de a methode de tri fusion
         """
-        list_sort = list_sort
         self.G.cloud = cloud
         self.G.origin = origin
         list_tets = self.G.sorting_fusion(self.G.cloud)
@@ -86,5 +85,5 @@ class Test_Graham():
 
 
 if __name__ == "__main__":
-    pytest.main(["-r chars", "Programmes\\test\\Test_Graham.py", "--cov",
+    pytest.main(["-r chars", "Programmes\\test\\TestGraham.py", "--cov",
                  "--cov-report=html:Programmes\\test\\Graham Rapport"])
