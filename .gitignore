@@ -1,74 +1,9 @@
 **/__pycache__/*
 **/.vscode/*
-.coverage
-**/images/*
-.github
 **/Nuages/*
-Data.xlsx
-Maths Info Archive.rar
-Performances.xlsx
-Présentation 1.pptx
-Programmes/test/Graham Rapport/index.html
-Programmes/test/Graham Rapport/Programmes_Class___init___py.html
-Programmes/test/Graham Rapport/Programmes_Class_Graham_py.html
-Programmes/test/Graham Rapport/Programmes_test_Test_Graham_py.html
-Programmes/test/Jarvis Rapport/index.html
-Programmes/test/Jarvis Rapport/Programmes_Class___init___py.html
-Programmes/test/Jarvis Rapport/Programmes_Class_Jarvis_py.html
-Programmes/test/Jarvis Rapport/Programmes_test_Test_Jarvis_py.html
-Programmes/test/Quickhull Rapport/index.html
-Programmes/test/Quickhull Rapport/Programmes_Class___init___py.html
-Programmes/test/Quickhull Rapport/Programmes_Class_Quickhull_py.html
-Programmes/test/Quickhull Rapport/Programmes_test_Test_Quickhull_py.html
-Programmes/test/Main Rapport/coverage_html.js
-Programmes/test/Main Rapport/index.html
-Programmes/test/Main Rapport/jquery.ba-throttle-debounce.min.js
-Programmes/test/Main Rapport/jquery.hotkeys.js
-Programmes/test/Main Rapport/jquery.isonscreen.js
-Programmes/test/Main Rapport/jquery.min.js
-Programmes/test/Main Rapport/jquery.tablesorter.min.js
-Programmes/test/Main Rapport/keybd_closed.png
-Programmes/test/Main Rapport/keybd_open.png
-Programmes/test/Main Rapport/Programmes_Class___init___py.html
-Programmes/test/Main Rapport/Programmes_Class_Graham_py.html
-Programmes/test/Main Rapport/Programmes_test_Test_Main_py.html
-Programmes/test/Main Rapport/status.json
-Programmes/test/Main Rapport/style.css
-Programmes/test/Graham Rapport/coverage_html.js
-Programmes/test/Graham Rapport/jquery.ba-throttle-debounce.min.js
-Programmes/test/Graham Rapport/jquery.hotkeys.js
-Programmes/test/Graham Rapport/jquery.isonscreen.js
-Programmes/test/Graham Rapport/jquery.min.js
-Programmes/test/Graham Rapport/jquery.tablesorter.min.js
-Programmes/test/Graham Rapport/keybd_closed.png
-Programmes/test/Graham Rapport/keybd_open.png
-Programmes/test/Graham Rapport/Programmes_test_TestGraham_py.html
-Programmes/test/Graham Rapport/status.json
-Programmes/test/Graham Rapport/style.css
-Programmes/test/Jarvis Rapport/coverage_html.js
-Programmes/test/Jarvis Rapport/jquery.ba-throttle-debounce.min.js
-Programmes/test/Jarvis Rapport/jquery.hotkeys.js
-Programmes/test/Jarvis Rapport/jquery.isonscreen.js
-Programmes/test/Jarvis Rapport/jquery.min.js
-Programmes/test/Jarvis Rapport/jquery.tablesorter.min.js
-Programmes/test/Jarvis Rapport/keybd_closed.png
-Programmes/test/Jarvis Rapport/keybd_open.png
-Programmes/test/Jarvis Rapport/Programmes_test_TestJarvis_py.html
-Programmes/test/Jarvis Rapport/status.json
-Programmes/test/Jarvis Rapport/style.css
-Programmes/test/Main Rapport/Programmes_Class_Jarvis_py.html
-Programmes/test/Main Rapport/Programmes_Class_Quickhull_py.html
-Programmes/test/Main Rapport/Programmes_test_TestMain_py.html
-Programmes/test/Main Rapport/Programmes_Class_Jarvis_py.html
-Programmes/test/Main Rapport/Programmes_Class_Quickhull_py.html
-Programmes/test/Quickhull Rapport/coverage_html.js
-Programmes/test/Quickhull Rapport/jquery.ba-throttle-debounce.min.js
-Programmes/test/Quickhull Rapport/jquery.hotkeys.js
-Programmes/test/Quickhull Rapport/jquery.isonscreen.js
-Programmes/test/Quickhull Rapport/jquery.min.js
-Programmes/test/Quickhull Rapport/jquery.tablesorter.min.js
-Programmes/test/Quickhull Rapport/keybd_closed.png
-Programmes/test/Quickhull Rapport/keybd_open.png
-Programmes/test/Quickhull Rapport/Programmes_test_TestQuickhull_py.html
-Programmes/test/Quickhull Rapport/status.json
-Programmes/test/Quickhull Rapport/style.css
+**/images/*
+Documents/*
+**/test/*
+*.rar
+.coverage
+.github
